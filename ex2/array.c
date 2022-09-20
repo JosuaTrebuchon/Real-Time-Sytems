@@ -100,7 +100,8 @@ void array_reserve(Array* a, long capacity){
 
 // Modifiers
 
-/* Task B
+/*
+// Task B
 void array_insertBack(Array* a, long stuff){
 // TODO: your code here
     a->back++;
@@ -116,6 +117,8 @@ void array_insertBack(Array* a, long stuff){
     if(length >= a->capacity){
         //printf("Increase capacity\n");
         array_reserve(a, a->capacity*2);
+
+        printf("%p\n", a->data);
 
         length = array_length(*a);
         //printf("cap: %ld, len: %ld\n", a->capacity, length);

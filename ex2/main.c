@@ -59,8 +59,13 @@ void task_c_reserve() {
     array_insertBack(&arr,100);
     array_insertBack(&arr,150);
     array_insertBack(&arr,12);
-
+    
+    printf("Array address before reserve : %p\n", arr.data);
     array_reserve(&arr,10);
+    printf("Array address after reserve : %p\n", arr.data);
+    
+    array_insertBack(&arr,150);
+    array_insertBack(&arr,12);
 
     array_print(arr);
 
@@ -99,7 +104,7 @@ void task_c_addReserve() {
 void task_d() {
     //Atempt at plotting using gnuplot
     
-    long maxcap = 1024;
+    long maxcap = 513;
 
     long i;
     Array arr = array_new(2);
@@ -111,6 +116,8 @@ void task_d() {
         printf("%ld %ld\n", arr.capacity, array_length(arr));
 
     }
+
+    array_destroy(arr);
 }
 
 int main(int argc, char* argv[])
